@@ -34,13 +34,21 @@
 
 ### 实验结果
 
-（1）创建云计算仓库
+（1）创建SSH Key
+
+```
+ssh-keygen -t rsa -b 4096 -C “870943021@qq.com”
+```
+
+ 然后复制“id_rsa.pub”的内容到GitHub网站的Settings–>SSH and GPG keys中：
+
+（2）创建云计算仓库
 
 ![](../image/004.png)
 
 
 
-（2）同步项目
+（3）同步项目
 
 ![](../image/005.png)
 
