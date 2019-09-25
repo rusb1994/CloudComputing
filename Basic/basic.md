@@ -76,4 +76,4 @@
 
 ③安装centOS系统
 
-![](..\image\012.png)
+![](../image/012.png)
