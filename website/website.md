@@ -2,7 +2,7 @@
 
 ####                                                                                                  何俊杰（116072017001）
 
-## 一.使用WordPress创建个人网站 
+## 一、使用WordPress创建个人网站 
 
 ### 部署环境：LAMP
 
@@ -33,7 +33,7 @@ http://your_cvm_ip/
 
 出现如下界面：
 
-![](I:../image/013.png)
+![](../image/013.png)
 
 #### 2.**安装MySQL**
 
@@ -43,7 +43,7 @@ http://your_cvm_ip/
 sudo yum install mariadb-server mariadb
 ```
 
-![](I:../image/014.png)
+![](../image/014.png)
 
 启动mariadb：
 
@@ -51,7 +51,7 @@ sudo yum install mariadb-server mariadb
 sudo systemctl start mariadb
 ```
 
-![](I:../image/015.png)
+![](../image/015.png)
 
 运行简单的安全脚本以移除潜在的安全风险，启动交互脚本：
 
@@ -65,7 +65,7 @@ sudo mysql_secure_installation
 sudo systemctl enable mariadb.service
 ```
 
-![](I:../image/016.png)
+![](../image/016.png)
 
 #### **3.安装PHP**
 
@@ -76,7 +76,7 @@ sudo yum install epel-release yum-utils
 sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 ```
 
-![](I:../image/017.png)
+![](../image/017.png)
 
 ![](I:../image/018.png)
 
@@ -98,7 +98,7 @@ sudo yum install php php-mysql
 php -v
 ```
 
-![](I:../image/019.png)
+![](../image/019.png)
 
 重启Apache服务器以支持PHP：
 
@@ -114,7 +114,7 @@ sudo systemctl restart httpd.service
 yum search php-
 ```
 
-![](I:../image/020.png)
+![](../image/020.png)
 
 WordPress使用php-gd进行图片的缩放，安装php-fpm和php-gd
 
@@ -150,7 +150,7 @@ http://your_cvm_ip/info.php
 
 可看到如下界面：
 
-![](I:../image/021.png)
+![](../image/021.png)
 
 #### **5.安装WordPress以及完成相关配置**
 
@@ -162,7 +162,7 @@ http://your_cvm_ip/info.php
 mysql -u root -p
 ```
 
-![](I:../image/022.png)
+![](../image/022.png)
 
 键入之前设置的root用户密码，并按下回车键进入MySQL命令行模式
 
@@ -178,7 +178,7 @@ CREATE DATABASE wordpress;
 CREATE USER rusb@localhost IDENTIFIED BY '84141203';
 ```
 
-![](I:../image/023.png)
+![](../image/023.png)
 
 授权给wordpressuser用户访问数据库的权限：
 
@@ -186,7 +186,7 @@ CREATE USER rusb@localhost IDENTIFIED BY '84141203';
 GRANT ALL PRIVILEGES ON wordpress.* TO rusb@localhost IDENTIFIED BY '84141203';
 ```
 
-![](I:../image/024.png)
+![](../image/024.png)
 
 刷新MySQL的权限：
 
@@ -194,7 +194,7 @@ GRANT ALL PRIVILEGES ON wordpress.* TO rusb@localhost IDENTIFIED BY '84141203';
 FLUSH PRIVILEGES;
 ```
 
-![](I:../image/025.png)
+![](../image/025.png)
 
 最后退出MySQL的命令行模式：
 
@@ -217,7 +217,7 @@ wget http://wordpress.org/latest.tar.gz
 tar xzvf wordpress-5.2.4-zh_CN.tar.gz
 ```
 
-![](I:../image/030.png)
+![](../image/030.png)
 
 解压之后在主目录下产生一个wordpress文件夹。我们将该文件夹下的内容同步到Apache服务器的根目录下，使得wordpress的内容能够被访问。这里使用rsync命令：
 
@@ -257,7 +257,7 @@ cp wp-config-sample.php wp-config.
 nano wp-config.php
 ```
 
-![](I:../image/026.png)
+![](../image/026.png)
 
 (4)通过Web界面进一步配置WordPress**
 
@@ -265,14 +265,14 @@ nano wp-config.php
 
 出现如下界面：
 
-![](I:../image/027.png)
+![](../image/027.png)
 
 设置网站的标题，用户名和密码以及电子邮件等，点击**Install WordPress**，弹出确认页面
 
 弹出登录界面：
 
-![](I:../image/028.png)
+![](../image/028.png)
 
 输入用户名和密码之后，进入WordPress的控制面板：
 
-![](I:../image/029.png)
+![](../image/029.png)
