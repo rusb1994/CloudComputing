@@ -149,7 +149,7 @@ docker run -dit -p 8080:80 test
 **7.进入容器**
 
 ```
-docker exec -it 容器ID /bin/bash
+docker exec -it 5b0 /bin/bash
 ```
 
 **8.浏览器进入49.235.126.200:8080**
