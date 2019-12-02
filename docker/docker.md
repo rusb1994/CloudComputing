@@ -110,15 +110,15 @@ docker push rusb1994/centos:v1
 
 **1.编写Dockerfile文件**
 
-![](../image/49.png)
+![](../image/50.png)
 
-**2.编写setup.sql**
-
-![](../image/43.png)
-
-**3.编写server.conf以支持mysql**
+**2.编辑server.conf**
 
 ![](../image/45.png)
+
+**3.编辑setup.sql**
+
+![](../image/43.png)
 
 **4.编写start.sh启动脚本**
 
@@ -130,7 +130,7 @@ docker push rusb1994/centos:v1
 
 **并将它们放在与Dockerfile文件同一目录下**
 
-5.构建镜像
+**5.构建镜像**
 
 ```
 docker build -t test .
