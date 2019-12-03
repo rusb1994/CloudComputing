@@ -110,25 +110,23 @@ docker push rusb1994/centos:v1
 
 **1.编写Dockerfile文件**
 
-![](../image/50.png)
+![](../image/56.png)
 
-**2.编辑server.conf**
+**2.编辑start.sh**
 
-![](../image/45.png)
+![](../image/58.png)
 
-**3.编辑setup.sql**
+**3.编辑mysql.sql**
 
-![](../image/43.png)
+![](../image/57.png)
 
-**4.编写start.sh启动脚本**
+**4.编写start.service**
 
-![](../image/40.png)
+![](../image/59.png)
 
-**在构建镜像前下载**
+**5.编辑install.sh**
 
-![](../image/46.png)
-
-**并将它们放在与Dockerfile文件同一目录下**
+![](../image/60.png)
 
 **5.构建镜像**
 
@@ -136,24 +134,26 @@ docker push rusb1994/centos:v1
 docker build -t test .
 ```
 
-![](../image/42.png)
+![](../image/51.png)
 
 **6.运行并设置端口映射**
 
 ```
-docker run -dit -p 8080:80 test
+docker run -dit --privileged -p 8080:80 test
 ```
 
-![](../image/47.png)
+![](../image/61.png)
 
 **7.进入容器**
 
 ```
-docker exec -it 5b0 /bin/bash
+docker exec -it 32a /bin/bash
 ```
 
-**8.浏览器进入49.235.126.200:8080**
+**8.浏览器输入49.235.126.200:8080查看**
 
-![](../image/41.png)
+![](../image/53.png)
 
-![](../image/48.png)
+![](../image/54.png)
+
+![](../image/55.png)
