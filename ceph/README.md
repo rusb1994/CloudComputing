@@ -18,7 +18,7 @@ http://mirrors.aliyun.com/centos/7/isos/x86_64/
 
 ![](../image/63.png)
 
-<img src="I:../image/64.png" style="zoom:80%;" />
+![](../image/64.png)
 
 #### 2.配置sudo权限
 
@@ -46,7 +46,7 @@ systemctl enable ntpd.service
 systemctl start ntpd.service
 ```
 
-<img src="../image/66.png"  />
+![](../image/66.png)
 
 ![](../image/68.png)
 
@@ -267,4 +267,4 @@ ceph-deploy disk list osd1 osd2
 
 ### 四.检查集群状态
 
-<img src="../image/95.png" style="zoom:70%;" />
+![](../image/95.png)
