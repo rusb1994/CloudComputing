@@ -16,9 +16,9 @@ http://mirrors.aliyun.com/centos/7/isos/x86_64/
 
 ##### （1）获取虚拟机IP地址
 
-![](I:\commit\image\63.png)
+![](../image/63.png)
 
-<img src="I:\commit\image\64.png"  />
+<img src="I:../image/64.png" style="zoom:80%;" />
 
 #### 2.配置sudo权限
 
@@ -30,7 +30,7 @@ chmod 0440 /etc/sudoers.d/rusb
 sed -i s'/Defaults requiretty/#Defaults requiretty'/g /etc/sudoers
 ```
 
-![](I:\commit\image\65.png)
+![](../image/65.png)
 
 #### 3.安装ntp服务
 
@@ -46,13 +46,13 @@ systemctl enable ntpd.service
 systemctl start ntpd.service
 ```
 
-<img src="I:\commit\image\66.png"  />
+<img src="../image/66.png"  />
 
-![](I:\commit\image\68.png)
+![](../image/68.png)
 
 #### 4.给虚拟机安装vm-tools
 
-![](I:\commit\image\69.png)
+![](../image/69.png)
 
 #### 5.禁用SELINUX
 
@@ -62,7 +62,7 @@ sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 
 #### 6.复制虚拟机
 
-![](I:\commit\image\70.png)
+![](../image/70.png)
 
 
 
@@ -124,7 +124,7 @@ IP3 osd1
 IP4 osd2
 ```
 
-![](I:\commit\image\89.png)
+![](../image/89.png)
 
 
 
@@ -135,7 +135,7 @@ su - cephuser
 ssh-keygen
 ```
 
-![](I:\commit\image\75.png)
+![](../image/75.png)
 
 ##### 3.配置
 
@@ -147,9 +147,9 @@ sudo chmod 644 ~/.ssh/config
 ssh-keyscan osd1 osd2 mon1 >> ~/.ssh/known_hosts
 ```
 
-![](I:\commit\image\76.png)
+![](../image/76.png)
 
-![](I:\commit\image\77.png)
+![](../image/77.png)
 
 4.分发密钥
 
@@ -161,11 +161,11 @@ ssh-copy-id osd1
 ssh-copy-id osd2
 ```
 
-![](I:\commit\image\78.png)
+![](../image/78.png)
 
-![](I:\commit\image\79.png)
+![](../image/79.png)
 
-![](I:\commit\image\80.png)
+![](../image/80.png)
 
 ##### 5.测试连接各节点ssh
 
@@ -177,7 +177,7 @@ ssh osd2
 ssh mon1
 ```
 
-![](I:\commit\image\81.png)
+![](../image/81.png)
 
 ##### 6.ceph-deploy安装
 
@@ -191,7 +191,7 @@ sudo yum install ceph-deploy -y
 ceph-deploy –version
 ```
 
-![](I:\commit\image\82.png)
+![](../image/82.png)
 
 
 
@@ -209,7 +209,7 @@ osd pool default size = 2
 public network = {ip-address}/{netmask}
 ```
 
-![](I:\commit\image\90.png)
+![](../image/90.png)
 
 
 
@@ -225,7 +225,7 @@ hostnamectl set-hostname mon1
 ceph-deploy install ceph-admin mon1 osd1 osd2
 ```
 
-![](I:\commit\image\85.png)
+![](../image/85.png)
 
 ##### 10.初始化mon1节点
 
@@ -237,7 +237,7 @@ ceph-deploy gatherkeys mon1
 
 完成后会多出几个密钥文件
 
-![](I:\commit\image\86.png)
+![](../image/86.png)
 
 ##### 11.将OSDS添加到集群
 
@@ -253,7 +253,7 @@ ceph-deploy osd activate osd1:/var/local/osd1 osd2:/var/local/osd2
 ceph-deploy admin ceph-admin mon1 osd1 osd2
 ```
 
-![](I:\commit\image\87.png)
+![](../image/87.png)
 
 ##### 13.所有节点执行命令更改密钥文件的权限
 
@@ -263,8 +263,8 @@ sudo chmod 644 /etc/ceph/ceph.client.admin.keyring
 ceph-deploy disk list osd1 osd2
 ```
 
-![](I:\commit\image\88.png)
+![](../image/88.png)
 
 ### 四.检查集群状态
 
-![](I:\commit\image\95.png)
+<img src="../image/95.png" style="zoom:70%;" />
